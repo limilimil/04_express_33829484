@@ -2,7 +2,8 @@
 const express = require("express");
 const router = express.Router();
 
-const path = require('path'); // Imports the path module for file directories
+// Imports the path module for file directories
+const path = require('path');
 
 // Handle the main routes
 router.get("/", (req, res) => res.send("Hello World!")); // Handles requests for the default web page
@@ -28,7 +29,7 @@ router.get('/chain', (req, res, next) => {
     next();
 }, (req, res) => {
     res.send (`<h1>Heading from the end of the chain</h1> ${req.customMessage.first} ${req.customMessage.second}`);
-}); // Handles requests for the chain page with route chaining
+}); // Handles requests for the chain page, with route chaining
 
 router.get(`/file`, (req, res) => res.sendFile (path.join(__dirname, '../views/a.html'))); // Handles requests for the file page, with html file rendering
 

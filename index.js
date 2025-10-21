@@ -9,7 +9,6 @@ const port = 8000; // Defines the port on which application will listen for HTTP
 const mainRoutes = require("./routes/main");  
 app.use('/', mainRoutes);
 
-
 // Start listening for HTTP requests
 app.listen(port, 
     () => console.log(`Node server is running on port ${port}...`));
